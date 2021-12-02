@@ -32,7 +32,7 @@ The repo is split into a number of packages, each representing an application. T
 - [page-staking](packages/page-staking/) A basic staking management app, allowing staking and nominations.
 - [page-storage](packages/page-storage/) A simple node storage query application. Multiple queries can be queued and updates as new values become available.
 - [page-toolbox](packages/page-toolbox/) Submission of raw data to RPC endpoints and utility hashing functions.
-- [page-transfer](packages/page-transfer/) A basic account management app, allowing transfer of Units/DOTs between accounts.
+- [page-transfer](packages/page-transfer/) A basic account management app, allowing transfer of Units/SETMs between accounts.
 
 In addition the following libraries are also included in the repo. These are to be moved to the [@polkadot/ui](https://github.com/polkadot-js/ui/) repository once it reaches a base level of stability and usability. (At this point with the framework being tested on the apps above, it makes development easier having it close)
 
