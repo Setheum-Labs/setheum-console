@@ -15028,48 +15028,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"setconsole-apps@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "setconsole-apps@workspace:."
-  dependencies:
-    "@babel/core": ^7.14.3
-    "@babel/register": ^7.13.16
-    "@babel/runtime": ^7.14.0
-    "@crustio/crust-pin": ^0.0.1
-    "@pinata/sdk": ^1.1.20
-    "@polkadot/dev": ^0.62.28
-    "@polkadot/ts": ^0.3.76
-    "@types/bn.js": ^4.11.6
-    "@types/chart.js": ^2.9.32
-    "@types/file-saver": ^2.0.2
-    "@types/jest": ^26.0.23
-    "@types/react-beautiful-dnd": ^13.0.0
-    "@types/react-copy-to-clipboard": ^5.0.0
-    "@types/react-dom": ^17.0.5
-    "@types/react-router-dom": ^5.1.7
-    "@types/store": ^2.0.2
-    "@types/styled-components": ^5.1.9
-    "@types/styled-theming": ^2.2.5
-    concurrently: ^6.2.0
-    devtron: ^1.4.0
-    dnslink-cloudflare: ^3.0.0
-    electron: ^12.0.9
-    electron-builder: ^22.10.5
-    electron-builder-notarize: ^1.2.0
-    i18next-scanner: ^3.0.0
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    react-is: ^17.0.2
-    source-map-explorer: ^2.5.2
-    styled-components: ^5.3.0
-    stylelint: ^13.13.1
-    stylelint-config-recommended: ^5.0.0
-    stylelint-config-styled-components: ^0.1.1
-    webpack: ^5.38.1
-    webpack-cli: ^4.7.0
-  languageName: unknown
-  linkType: soft
-
 "pontem-types-bundle@npm:^1.0.5":
   version: 1.0.5
   resolution: "pontem-types-bundle@npm:1.0.5"
@@ -17034,6 +16992,48 @@ resolve@^2.0.0-next.3:
   checksum: 09a4bc72c94641aeae950eb60dc2755943b863780fcc32e441eda964b64df5e3f50603d5ebdd33394ede722528bd55ed43aae26e9df469b4d32e2292b427b601
   languageName: node
   linkType: hard
+
+"setconsole-apps@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "setconsole-apps@workspace:."
+  dependencies:
+    "@babel/core": ^7.14.3
+    "@babel/register": ^7.13.16
+    "@babel/runtime": ^7.14.0
+    "@crustio/crust-pin": ^0.0.1
+    "@pinata/sdk": ^1.1.20
+    "@polkadot/dev": ^0.62.28
+    "@polkadot/ts": ^0.3.76
+    "@types/bn.js": ^4.11.6
+    "@types/chart.js": ^2.9.32
+    "@types/file-saver": ^2.0.2
+    "@types/jest": ^26.0.23
+    "@types/react-beautiful-dnd": ^13.0.0
+    "@types/react-copy-to-clipboard": ^5.0.0
+    "@types/react-dom": ^17.0.5
+    "@types/react-router-dom": ^5.1.7
+    "@types/store": ^2.0.2
+    "@types/styled-components": ^5.1.9
+    "@types/styled-theming": ^2.2.5
+    concurrently: ^6.2.0
+    devtron: ^1.4.0
+    dnslink-cloudflare: ^3.0.0
+    electron: ^12.0.9
+    electron-builder: ^22.10.5
+    electron-builder-notarize: ^1.2.0
+    i18next-scanner: ^3.0.0
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    react-is: ^17.0.2
+    source-map-explorer: ^2.5.2
+    styled-components: ^5.3.0
+    stylelint: ^13.13.1
+    stylelint-config-recommended: ^5.0.0
+    stylelint-config-styled-components: ^0.1.1
+    webpack: ^5.38.1
+    webpack-cli: ^4.7.0
+  languageName: unknown
+  linkType: soft
 
 "setprototypeof@npm:1.1.0":
   version: 1.1.0
