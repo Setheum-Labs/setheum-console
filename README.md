@@ -162,8 +162,8 @@ The desktop app uses the [Electron](https://www.electronjs.org/) framework. It p
 being different account storage.
 
 The accounts are stored in the following directories:
-* Mac: `~/Library/Application Support/polkadot-apps/polkadot-accounts`
-* Linux: `~/.config/polkadot-apps/polkadot-accounts` (or `$XDG_CONFIG_HOME/polkadot-apps/polkadot-accounts` if `$XDG_CONFIG_HOME` is defined)
-* Windows: `%APPDATA%\polkadot-apps\polkadot-accounts`
+* Mac: `~/Library/Application Support/setconsole-apps/polkadot-accounts`
+* Linux: `~/.config/setconsole-apps/polkadot-accounts` (or `$XDG_CONFIG_HOME/setconsole-apps/polkadot-accounts` if `$XDG_CONFIG_HOME` is defined)
+* Windows: `%APPDATA%\setconsole-apps\polkadot-accounts`
 
 For more details on the desktop app, head over to [Electron package README](https://github.com/polkadot-js/apps/blob/master/packages/apps-electron/README.md).
