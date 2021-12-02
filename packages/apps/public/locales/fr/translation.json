@@ -1318,7 +1318,7 @@
   "rpc.kusama.w3f": "Kusama (Polkadot Canary, hébergé par Web3 Foundation)",
   "rpc.local": "Noeud Local (Propre noeud, 127.0.0.1:9944)",
   "rpc.mandala": "Mandala (Testnet Acala, hébergé par Acala)",
-  "rpc.setheum.network": "Setheum Newrome (Testnet Setheum, hébergé par Setheum)",
+  "rpc.setheum.network": "Setheum NewRome (Testnet Setheum, hébergé par Setheum)",
   "rpc.nodle-arcadia": "Arcadia (Testnet Nodle, hébergé par Nodle)",
   "rpc.nodle-main": "Nodle Main",
   "rpc.pangolin": "Pangolin",

@@ -24,7 +24,7 @@ export default {
     Polkadot: 'polkadot',
     Rococo: 'rococo',
     'Setheum': 'setheum-mainnet',
-    'Setheum Newrome': 'setheum-testnet',
+    'Setheum NewRome': 'setheum-testnet',
     Stafi: 'stafi',
     Westend: 'westend'
   },
