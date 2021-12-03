@@ -974,7 +974,7 @@
   "rpc.kusama.w3f": "Kusama (Polkadot Canary, hospedado pela Web3 Foundation)",
   "rpc.local": "Nó local (Próprio, 127.0.0.1:9944)",
   "rpc.mandala": "Mandala (Acala Testnet, hosted by Acala)",
-  "rpc.setheum.network": "Setheum Newrome (Setheum Testnet, hosted by Setheum)",
+  "rpc.setheum.network": "Setheum NewRome (Setheum Testnet, hosted by Setheum)",
   "rpc.nodle-arcadia": "Arcadia (Nodle Testnet, hospedado por Nodle)",
   "rpc.sora-substrate": "SORA",
   "rpc.sora-substrate-staging": "SORA-staging (SORA-staging Testnet, hosted by Soramitsu)",

@@ -19,7 +19,7 @@ export function createTesting (t: TFunction): LinkOption[] {
     // alphabetical based on chain name, e.g. Amber, Arcadia, Beresheet, ...
     {
       info: 'setheum-newrome',
-      text: t('rpc.setheum.network', 'Setheum Newrome', { ns: 'apps-config' }),
+      text: t('rpc.setheum.network', 'Setheum NewRome', { ns: 'apps-config' }),
       providers: {
         'Setheum': 'wss://rpc-newrome.setheum.xyz'
       }

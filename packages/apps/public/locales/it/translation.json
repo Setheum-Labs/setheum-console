@@ -1308,7 +1308,7 @@
   "rpc.kusama.w3f": "Kusama (Polkadot Canary, ospitato dalla Fondazione Web3)",
   "rpc.local": "Nodo locale (proprio, 127.0.0.0.1:9944)",
   "rpc.mandala": "Mandala (Acala Testnet, ospitato by Acala)",
-  "rpc.setheum.network": "Setheum Newrome (Setheum Testnet, ospitato by Setheum)",
+  "rpc.setheum.network": "Setheum NewRome (Setheum Testnet, ospitato by Setheum)",
   "rpc.nodle-arcadia": "Arcadia (Nodle Testnet, ospitato da Nodle)",
   "rpc.phoenix": "PHOENIX Protocol (PHOENIX Mashnet, ospitato da PHOENIX Protocol)",
   "rpc.turbulence": "Turbulence (Laminar Testnet, ospitato da Laminar)",

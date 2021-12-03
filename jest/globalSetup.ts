@@ -12,7 +12,7 @@ const startSubstrate = async () => {
 
   const startedTestContainer = await new GenericContainer('parity/substrate')
     .withPullPolicy(new AlwaysPullPolicy())
-    .withName('polkadot-apps-test-substrate')
+    .withName('setconsole-apps-test-substrate')
     .withExposedPorts(9944)
     .withCmd(['--dev', '--ws-port=9944', '--unsafe-ws-external'])
     .withWaitStrategy(Wait.forLogMessage('New epoch 0 launching'))

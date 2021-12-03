@@ -1263,7 +1263,7 @@
   "rpc.kusama.w3f": "Kusama (Polkadot Canary, dihosting oleh Web3 Foundation)",
   "rpc.local": "Node Lokal (Pribadi, 127.0.0.1:9944)",
   "rpc.mandala": "Mandala (Acala Testnet, dihosting oleh Acala)",
-  "rpc.setheum.network": "Setheum Newrome (Setheum Testnet, dihosting oleh Setheum)",
+  "rpc.setheum.network": "Setheum NewRome (Setheum Testnet, dihosting oleh Setheum)",
   "rpc.nodle-arcadia": "Arcadia (Nodle Testnet, dihosting oleh Nodle)",
   "rpc.phoenix": "PHOENIX Protocol (PHOENIX Mashnet, dihosting oleh PHOENIX Protocol)",
   "rpc.turbulence": "Turbulence (Laminar Testnet, dihosting oleh Laminar)",

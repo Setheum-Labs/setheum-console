@@ -217,7 +217,7 @@ export const chainColors: Record<string, string> = [
   ['Riochain Staging', chainRiochain],
   ['Sakura', chainSakura],
   ['Setheum Mainnet', chainSetheum],
-  ['Setheum Newrome Testnet', chainSetheum],
+  ['Setheum NewRome Testnet', chainSetheum],
   ['Shadow', chainShadow],
   ['sherpax', chainChainx],
   ['Statemine', chainStatemine],

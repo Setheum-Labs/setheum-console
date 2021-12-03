@@ -17,7 +17,7 @@ export function createWsEndpoints (t: TFunction): LinkOption[] {
       isDisabled: false,
       isHeader: true,
       isSpaced: true,
-      text: t('rpc.header.live.relay', 'Live relays & parachains', { ns: 'apps-config' }),
+      text: t('rpc.header.live', 'Live Networks', { ns: 'apps-config' }),
       textBy: '',
       value: ''
     },
