@@ -1,13 +1,13 @@
 {
-  "bugs": "https://github.com/polkadot-js/apps/issues",
-  "homepage": "https://github.com/polkadot-js/apps/tree/master/packages/page-democracy#readme",
+  "bugs": "https://github.com/setheum-js/console/issues",
+  "homepage": "https://github.com/setheum-js/console/tree/master/packages/page-democracy#readme",
   "license": "Apache-2.0",
   "name": "@polkadot/app-democracy",
   "private": true,
   "repository": {
     "directory": "packages/page-democracy",
     "type": "git",
-    "url": "https://github.com/polkadot-js/apps.git"
+    "url": "https://github.com/setheum-js/console.git"
   },
   "sideEffects": false,
   "type": "module",

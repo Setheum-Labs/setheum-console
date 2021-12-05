@@ -26,7 +26,7 @@ export function createKusama (t: TFunction): EndpointOption {
       'Geometry Labs': 'wss://kusama.geometry.io/websockets',
       Dwellir: 'wss://kusama-rpc.dwellir.com',
       'light client': 'light://substrate-connect/kusama'
-      // Pinknode: 'wss://rpc.pinknode.io/kusama/explorer' // https://github.com/polkadot-js/apps/issues/5721
+      // Pinknode: 'wss://rpc.pinknode.io/kusama/explorer' // https://github.com/setheum-js/console/issues/5721
     },
     teleport: [1000],
     linked: [
@@ -193,7 +193,7 @@ export function createKusama (t: TFunction): EndpointOption {
       },
       {
         info: 'loomNetwork',
-        isUnreachable: true, // https://github.com/polkadot-js/apps/issues/5888
+        isUnreachable: true, // https://github.com/setheum-js/console/issues/5888
         homepage: 'https://loomx.io/',
         paraId: 2080,
         text: t('rpc.kusama.loomnetwork', 'Loom Network', { ns: 'apps-config' }),
@@ -251,7 +251,7 @@ export function createKusama (t: TFunction): EndpointOption {
       },
       {
         info: 'polkasmith',
-        isUnreachable: true, // https://github.com/polkadot-js/apps/issues/6595
+        isUnreachable: true, // https://github.com/setheum-js/console/issues/6595
         homepage: 'https://polkasmith.polkafoundry.com/',
         paraId: 2009,
         text: t('rpc.kusama.polkasmith', 'PolkaSmith by PolkaFoundry', { ns: 'apps-config' }),
@@ -329,7 +329,7 @@ export function createKusama (t: TFunction): EndpointOption {
       },
       {
         info: 'subsocial',
-        isUnreachable: true, // https://github.com/polkadot-js/apps/issues/6550
+        isUnreachable: true, // https://github.com/setheum-js/console/issues/6550
         homepage: 'https://subsocial.network/',
         paraId: 2100,
         text: t('rpc.kusama.subsocial', 'Subsocial', { ns: 'apps-config' }),

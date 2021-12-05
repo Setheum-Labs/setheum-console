@@ -26,7 +26,7 @@ export function createPolkadot (t: TFunction): EndpointOption {
       'Geometry Labs': 'wss://polkadot.geometry.io/websockets',
       // Dwellir: 'wss://polkadot-rpc.dwellir.com',
       'light client': 'light://substrate-connect/polkadot'
-      // Pinknode: 'wss://rpc.pinknode.io/polkadot/explorer' // https://github.com/polkadot-js/apps/issues/5721
+      // Pinknode: 'wss://rpc.pinknode.io/polkadot/explorer' // https://github.com/setheum-js/console/issues/5721
     },
     linked: [
       // (1) system parachains (none available yet)
@@ -118,7 +118,7 @@ export function createPolkadot (t: TFunction): EndpointOption {
       },
       {
         info: 'darwinia',
-        isUnreachable: true, // https://github.com/polkadot-js/apps/issues/6530
+        isUnreachable: true, // https://github.com/setheum-js/console/issues/6530
         homepage: 'https://darwinia.network/',
         paraId: 2003,
         text: t('rpc.polkadot.darwinia', 'Darwinia', { ns: 'apps-config' }),

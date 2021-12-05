@@ -26,7 +26,7 @@ export function createRococo (t: TFunction): EndpointOption {
       // OnFinality: 'wss://rococo.api.onfinality.io/public-ws', // After reset, node misses host functions
       // 'Patract Elara': 'wss://pub.elara.patract.io/rococo', // After reset node is not available
       // Pinknode: 'wss://rpc.pinknode.io/rococo/explorer' // After reset, syncs to old chain
-      // 'Ares Protocol': 'wss://rococo.aresprotocol.com' // https://github.com/polkadot-js/apps/issues/5767
+      // 'Ares Protocol': 'wss://rococo.aresprotocol.com' // https://github.com/setheum-js/console/issues/5767
     },
     linked: [
       // these are the base chains
@@ -461,7 +461,7 @@ export function createRococo (t: TFunction): EndpointOption {
       },
       {
         info: 'rococoZeitgeist',
-        isDisabled: true, // See https://github.com/polkadot-js/apps/issues/5842
+        isDisabled: true, // See https://github.com/setheum-js/console/issues/5842
         paraId: 2050,
         text: t('rpc.rococo.zeitgeist', 'Zeitgeist PC', { ns: 'apps-config' }),
         providers: {
