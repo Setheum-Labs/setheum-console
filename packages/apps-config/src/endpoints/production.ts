@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type { TFunction } from 'i18next';
-import type { LinkOption } from '../settings/types';
+import type { LinkOption } from './types';
 
 import { expandEndpoints } from './util';
 
@@ -20,7 +20,8 @@ export const mainnetEndPoints = [
 //   text: The text to display on the dropdown
 //   value: The actual hosted secure websocket endpoint
 
-export function createProduction (t: TFunction): LinkOption[] {
+// alphabetical based on chain name
+export function createProduction (t: TFunction, firstOnly: boolean, withSort: boolean): LinkOption[] {
   return expandEndpoints(t, [
     {
       info: 'setheum',
@@ -31,5 +32,5 @@ export function createProduction (t: TFunction): LinkOption[] {
         // AlSharif: newromeEndPoints[2]
       }
     }
-  ]);
+  ], firstOnly, withSort);
 }

@@ -31,9 +31,11 @@ export interface ApiState {
 export interface ApiProps extends ApiState {
   api: ApiPromise;
   apiError: string | null;
+  apiUrl?: string;
   extensions?: InjectedExtension[];
   isApiConnected: boolean;
   isApiInitialized: boolean;
+  isElectron: boolean;
   isWaitingInjected: boolean;
 }
 

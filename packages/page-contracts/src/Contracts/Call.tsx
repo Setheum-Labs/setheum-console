@@ -40,7 +40,7 @@ function Call ({ className = '', contract, messageIndex, onCallResult, onChangeM
   const [value, isValueValid, setEndowment] = useFormField<BN>(BN_ZERO);
   const [outcomes, setOutcomes] = useState<CallResult[]>([]);
   const [execTx, setExecTx] = useState<SubmittableExtrinsic<'promise'> | null>(null);
-  const [params, setParams] = useState<any[]>([]);
+  const [params, setParams] = useState<unknown[]>([]);
   const [isViaCall, toggleViaCall] = useToggle();
   const weight = useWeight();
   const dbValue = useDebounce(value);
@@ -76,9 +76,9 @@ function Call ({ className = '', contract, messageIndex, onCallResult, onChangeM
           ? dbValue
           : 0
       }, ...dbParams)
-      .then(({ gasConsumed, result }) => setEstimatedWeight(
+      .then(({ gasRequired, result }) => setEstimatedWeight(
         result.isOk
-          ? gasConsumed
+          ? gasRequired
           : null
       ))
       .catch(() => setEstimatedWeight(null));
@@ -122,7 +122,7 @@ function Call ({ className = '', contract, messageIndex, onCallResult, onChangeM
   );
 
   const isValid = !!(accountId && weight.isValid && isValueValid);
-  const isViaRpc = contract.hasRpcContractsCall && (isViaCall || !message.isMutating);
+  const isViaRpc = contract.hasRpcContractsCall && (isViaCall || (!message.isMutating && !message.isPayable));
 
   return (
     <Modal
@@ -214,7 +214,7 @@ function Call ({ className = '', contract, messageIndex, onCallResult, onChangeM
           </Expander>
         )}
       </Modal.Content>
-      <Modal.Actions onCancel={onClose}>
+      <Modal.Actions>
         {isViaRpc
           ? (
             <Button

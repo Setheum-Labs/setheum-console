@@ -7,7 +7,7 @@ export const colorBtnDefault = '#767778';
 export const colorBtnShadow = '#98999a';
 
 /* highlighted buttons, orange */
-export const colorBtnHighlight = '#f19135';
+export const colorBtnHighlight = 'linear-gradient(90deg, rgba(200,26,198,1) 0%, rgba(28,54,213,1) 50%, rgba(32,240,230,1) 100%)'; // Setheum Gradient
 
 /* primary buttons, blue */
 export const colorBtnPrimary = colorBtnDefault; // '#2e86ab';
