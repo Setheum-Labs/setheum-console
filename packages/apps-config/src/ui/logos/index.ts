@@ -162,11 +162,6 @@ import nodeZeitgeist from './nodes/zeitgeist.png';
 import nodeZenlink from './nodes/zenlink.svg';
 import nodeZero from './nodes/zero.svg';
 import emptyLogo from './empty.svg';
-// last-resort fallback, just something empty
-<<<<<<< Updated upstream
-import emptyLogo from './empty.svg';
-=======
->>>>>>> Stashed changes
 
 // Alphabetical overrides based on the actual matched chain name
 // NOTE: This is as retrieved via system.chain RPC
