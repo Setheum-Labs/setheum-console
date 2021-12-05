@@ -1,13 +1,13 @@
 {
-  "bugs": "https://github.com/polkadot-js/apps/issues",
-  "homepage": "https://github.com/polkadot-js/apps/tree/master/packages/react-api#readme",
+  "bugs": "https://github.com/setheum-js/console/issues",
+  "homepage": "https://github.com/setheum-js/console/tree/master/packages/react-api#readme",
   "license": "Apache-2.0",
   "name": "@polkadot/react-api",
   "private": true,
   "repository": {
     "directory": "packages/react-api",
     "type": "git",
-    "url": "https://github.com/polkadot-js/apps.git"
+    "url": "https://github.com/setheum-js/console.git"
   },
   "sideEffects": true,
   "type": "module",

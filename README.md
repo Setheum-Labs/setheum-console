@@ -48,7 +48,7 @@ To start off, this repo (along with others in the [@polkadot](https://github.com
 
 To get started -
 
-1. Clone the repo locally, via `git clone https://github.com/polkadot-js/apps <optional local path>`
+1. Clone the repo locally, via `git clone https://github.com/setheum-js/console <optional local path>`
 2. Ensure that you have a recent LTS version of Node.js, for development purposes [Node >=10.13.0](https://nodejs.org/en/) is recommended.
 3. Ensure that you have a recent version of Yarn, for development purposes [Yarn >=1.10.1](https://yarnpkg.com/docs/install) is required.
 4. Install the dependencies by running `yarn`
@@ -166,4 +166,4 @@ The accounts are stored in the following directories:
 * Linux: `~/.config/setconsole-apps/polkadot-accounts` (or `$XDG_CONFIG_HOME/setconsole-apps/polkadot-accounts` if `$XDG_CONFIG_HOME` is defined)
 * Windows: `%APPDATA%\setconsole-apps\polkadot-accounts`
 
-For more details on the desktop app, head over to [Electron package README](https://github.com/polkadot-js/apps/blob/master/packages/apps-electron/README.md).
+For more details on the desktop app, head over to [Electron package README](https://github.com/setheum-js/console/blob/master/packages/apps-electron/README.md).

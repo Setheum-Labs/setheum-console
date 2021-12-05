@@ -27,7 +27,7 @@ export function createWestend (t: TFunction): EndpointOption {
       OnFinality: 'wss://westend.api.onfinality.io/public-ws',
       Pinknode: 'wss://rpc.pinknode.io/westend/explorer',
       'light client': 'light://substrate-connect/westend'
-      // 'NodeFactory(Vedran)': 'wss://westend.vedran.nodefactory.io/ws', // https://github.com/polkadot-js/apps/issues/5580
+      // 'NodeFactory(Vedran)': 'wss://westend.vedran.nodefactory.io/ws', // https://github.com/setheum-js/console/issues/5580
     },
     teleport: [1000],
     linked: [
@@ -49,7 +49,7 @@ export function createWestend (t: TFunction): EndpointOption {
       // NOTE: Added alphabetical based on chain name
       {
         info: 'basilisk',
-        isUnreachable: true, // https://github.com/polkadot-js/apps/issues/6422
+        isUnreachable: true, // https://github.com/setheum-js/console/issues/6422
         paraId: 2097,
         text: t('rpc.westend.basilisk', 'Basilisk Egg', { ns: 'apps-config' }),
         providers: {
@@ -82,7 +82,7 @@ export function createWestend (t: TFunction): EndpointOption {
       },
       {
         info: 'interBTC',
-        isUnreachable: true, // https://github.com/polkadot-js/apps/issues/6261
+        isUnreachable: true, // https://github.com/setheum-js/console/issues/6261
         paraId: 2094,
         text: t('rpc.westend.interbtc', 'InterBTC', { ns: 'apps-config' }),
         providers: {
@@ -91,7 +91,7 @@ export function createWestend (t: TFunction): EndpointOption {
       },
       {
         info: 'moonshadow',
-        isUnreachable: true, // https://github.com/polkadot-js/apps/issues/6181
+        isUnreachable: true, // https://github.com/setheum-js/console/issues/6181
         paraId: 2002,
         text: t('rpc.westend.moonshadow', 'Moonshadow', { ns: 'apps-config' }),
         providers: {
@@ -100,7 +100,7 @@ export function createWestend (t: TFunction): EndpointOption {
       },
       {
         info: 'pangoro',
-        isUnreachable: true, // https://github.com/polkadot-js/apps/issues/6530
+        isUnreachable: true, // https://github.com/setheum-js/console/issues/6530
         homepage: 'https://darwinia.network/',
         paraId: 2102,
         text: t('rpc.westend.pangoro', 'Pangoro', { ns: 'apps-config' }),
@@ -127,7 +127,7 @@ export function createWestend (t: TFunction): EndpointOption {
       },
       {
         info: 'karura',
-        isUnreachable: true, // https://github.com/polkadot-js/apps/issues/5830
+        isUnreachable: true, // https://github.com/setheum-js/console/issues/5830
         paraId: 2005,
         text: t('rpc.westend.wendala', 'Wendala', { ns: 'apps-config' }),
         providers: {
@@ -136,7 +136,7 @@ export function createWestend (t: TFunction): EndpointOption {
       },
       {
         info: 'whala',
-        isUnreachable: true, // https://github.com/polkadot-js/apps/issues/6181
+        isUnreachable: true, // https://github.com/setheum-js/console/issues/6181
         paraId: 2013,
         text: t('rpc.westend.whala', 'Whala', { ns: 'apps-config' }),
         providers: {
