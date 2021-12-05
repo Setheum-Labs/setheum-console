@@ -33,10 +33,10 @@ function Deploy ({ codeHash, constructorIndex = 0, onClose, setConstructorIndex 
   const { api } = useApi();
   const weight = useWeight();
   const [initTx, setInitTx] = useState<SubmittableExtrinsic<'promise'> | null>(null);
-  const [params, setParams] = useState<any[]>([]);
+  const [params, setParams] = useState<unknown[]>([]);
   const [accountId, isAccountIdValid, setAccountId] = useFormField<string | null>(null);
   const [endowment, isEndowmentValid, setEndowment] = useNonZeroBn(ENDOWMENT);
-  const [salt, setSalt] = useState(() => randomAsHex());
+  const [salt, setSalt] = useState<string>(() => randomAsHex());
   const [withSalt, setWithSalt] = useState(false);
 
   useEffect((): void => {
@@ -117,7 +117,10 @@ function Deploy ({ codeHash, constructorIndex = 0, onClose, setConstructorIndex 
   const isValid = isNameValid && isEndowmentValid && weight.isValid && isAccountIdValid && isSaltValid;
 
   return (
-    <Modal header={t('Deploy a contract')}>
+    <Modal
+      header={t('Deploy a contract')}
+      onClose={onClose}
+    >
       <Modal.Content>
         <InputAddress
           help={t('Specify the user account to use for this deployment. Any fees will be deducted from this account.')}
@@ -194,7 +197,7 @@ function Deploy ({ codeHash, constructorIndex = 0, onClose, setConstructorIndex 
           weight={weight}
         />
       </Modal.Content>
-      <Modal.Actions onCancel={onClose}>
+      <Modal.Actions>
         <TxButton
           accountId={accountId}
           extrinsic={initTx}

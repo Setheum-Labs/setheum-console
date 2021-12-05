@@ -21,7 +21,7 @@ const FACTORS = [0.2126, 0.7152, 0.0722];
 const PARTS = [0, 2, 4];
 const VERY_DARK = 16;
 
-const defaultHighlight = '#f19135'; // '#f19135'; // #999
+const defaultHighlight = 'linear-gradient(90deg, rgba(200,26,198,1) 0%, rgba(28,54,213,1) 50%, rgba(32,240,230,1) 100%)'; // Setheum Gradient
 
 function getHighlight (uiHighlight: string | undefined): string {
   return (uiHighlight || defaultHighlight);
@@ -51,6 +51,16 @@ function getMenuHoverContrast (uiHighlight: string | undefined): string {
   return brightness < BRIGHTNESS
     ? 'rgba(0, 0, 0, 0.15)'
     : 'rgba(255, 255, 255, 0.15)';
+}
+
+function hexToRGB (hex: string, alpha?: string) {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+
+  return alpha
+    ? `rgba(${r}, ${g}, ${b}, ${alpha})`
+    : `rgb(${r}, ${g}, ${b})`;
 }
 
 export default createGlobalStyle<Props & ThemeProps>(({ theme, uiHighlight }: Props & ThemeProps) => `
@@ -245,6 +255,59 @@ export default createGlobalStyle<Props & ThemeProps>(({ theme, uiHighlight }: Pr
     }
   }
 
+  .ui--Popup .ui--Button.isOpen:not(.isDisabled):not(.isReadOnly) {
+    background: ${getHighlight(uiHighlight)} !important;
+    color: ${getContrast(uiHighlight)} !important;
+
+    .ui--Icon {
+      background: transparent !important;
+      color: ${getContrast(uiHighlight)} !important;
+    }
+  }
+
+
+  .ui--Menu {
+    .ui--Menu__Item:hover {
+       background: ${hexToRGB(getHighlight(uiHighlight), '.1')};
+    }
+
+    .ui--Toggle.isChecked .ui--Toggle-Slider {
+      background: ${getHighlight(uiHighlight)};
+
+      &::before {
+        border-color: ${getHighlight(uiHighlight)};
+      }
+    }
+  }
+
+  .ui--Sort {
+    .ui--Labelled.ui--Dropdown:hover {
+     .ui.selection.dropdown {
+        border-color: ${getHighlight(uiHighlight)};
+
+       .visible.menu {
+         border: 1px solid ${getHighlight(uiHighlight)};
+        }
+      }
+    }
+
+    button:hover {
+      border-color: ${getHighlight(uiHighlight)};
+    }
+
+    button:hover,
+    .ui--Labelled.ui--Dropdown:hover {
+      &::after {
+        background-color:  ${getHighlight(uiHighlight)};
+      }
+    }
+
+    .arrow.isActive {
+      color:  ${getHighlight(uiHighlight)};
+      opacity: 1;
+    }
+  }
+
   .theme--dark,
   .theme--light {
     .ui--Tabs .tabLinkActive .tabLinkText::after{
@@ -274,6 +337,25 @@ export default createGlobalStyle<Props & ThemeProps>(({ theme, uiHighlight }: Pr
         }
       }
     }
+  }
+
+  .ui--ExpandButton:hover {
+    border-color: ${getHighlight(uiHighlight)} !important;
+
+    .ui--Icon {
+      color: ${getHighlight(uiHighlight)} !important;
+    }
+  }
+
+  .ui--Tag.themeColor.lightTheme,
+  .ui--InputTags.lightTheme .ui.label {
+    background: ${hexToRGB(getHighlight(uiHighlight), '0.08')};
+    color: ${countBrightness(uiHighlight) > BRIGHTNESS ? '#424242' : getHighlight(uiHighlight)};
+  }
+
+  .ui--Tag.themeColor.darkTheme,
+  .ui--InputTags.darkTheme .ui.label {
+    color: ${countBrightness(uiHighlight) > BRIGHTNESS ? getHighlight(uiHighlight) : '#fff'};
   }
 
   #root {

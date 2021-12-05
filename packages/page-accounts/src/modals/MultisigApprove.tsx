@@ -3,11 +3,12 @@
 
 import type { SubmittableExtrinsic } from '@polkadot/api/types';
 import type { AccountId, Call, H256, Multisig } from '@polkadot/types/interfaces';
+import type { CallFunction } from '@polkadot/types/types';
 
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 
-import { AddressMini, Dropdown, Expander, Input, InputAddress, MarkError, Modal, Toggle, TxButton } from '@polkadot/react-components';
+import { AddressMini, Call as CallDisplay, Dropdown, Expander, Input, InputAddress, MarkError, Modal, Toggle, TxButton } from '@polkadot/react-components';
 import { useAccounts, useApi, useWeight } from '@polkadot/react-hooks';
 import { assert, isHex } from '@polkadot/util';
 
@@ -35,18 +36,24 @@ interface Option {
 interface CallData {
   callData: Call | null;
   callError: string | null;
+  callInfo: CallFunction | null;
 }
 
-const EMPTY_CALL: CallData = { callData: null, callError: null };
+const EMPTY_CALL: CallData = {
+  callData: null,
+  callError: null,
+  callInfo: null
+};
 
 function MultisigApprove ({ className = '', onClose, ongoing, threshold, who }: Props): React.ReactElement<Props> {
   const { t } = useTranslation();
   const { api } = useApi();
   const { allAccounts } = useAccounts();
-  const [{ callData, callError }, setCallData] = useState<CallData>(EMPTY_CALL);
+  const [callHex, setCallHex] = useState<string>('');
+  const [{ callData, callError, callInfo }, setCallData] = useState<CallData>(EMPTY_CALL);
   const [callWeight] = useWeight(callData);
-  const [hash, setHash] = useState<string | null>(ongoing[0][0].toHex());
-  const [{ isMultiCall, multisig }, setMultisig] = useState<MultiInfo>({ isMultiCall: false, multisig: null });
+  const [hash, setHash] = useState<string | null>(() => ongoing[0][0].toHex());
+  const [{ isMultiCall, multisig }, setMultisig] = useState<MultiInfo>(() => ({ isMultiCall: false, multisig: null }));
   const [isCallOverride, setCallOverride] = useState(true);
   const [others, setOthers] = useState<AccountId[]>([]);
   const [signatory, setSignatory] = useState<string | null>(null);
@@ -95,11 +102,32 @@ function MultisigApprove ({ className = '', onClose, ongoing, threshold, who }: 
         .map((w) => api.createType('AccountId', w).toString())
         .filter((w) => allAccounts.some((a) => a === w) && multisig && (
           type === 'nay'
-            ? multisig.approvals[0].eq(w)
+            ? multisig.depositor.eq(w)
             : hasThreshold || !multisig.approvals.some((a) => a.eq(w))
         ))
     );
   }, [api, allAccounts, multisig, threshold, type, who]);
+
+  // when the hex changes, re-evaluate
+  useEffect((): void => {
+    if (callHex) {
+      try {
+        assert(isHex(callHex), 'Hex call data required');
+
+        const callData = api.createType('Call', callHex);
+
+        assert(callData.hash.eq(hash), 'Call data does not match the existing call hash');
+
+        const callInfo = api.registry.findMetaCall(callData.callIndex);
+
+        setCallData({ callData, callError: null, callInfo });
+      } catch (error) {
+        setCallData({ callData: null, callError: (error as Error).message, callInfo: null });
+      }
+    } else {
+      setCallData(EMPTY_CALL);
+    }
+  }, [api, callHex, hash]);
 
   // based on the type, multisig, others create the tx. This can be either an approval or final call
   useEffect((): void => {
@@ -126,30 +154,13 @@ function MultisigApprove ({ className = '', onClose, ongoing, threshold, who }: 
     );
   }, [api, callData, callWeight, hash, isCallOverride, isMultiCall, others, multisig, threshold, type]);
 
-  // when the actual call input changes, create a call and set it
-  const _setCallData = useCallback(
-    (callHex: string): void => {
-      try {
-        assert(isHex(callHex), 'Hex call data required');
-
-        const callData = api.createType('Call', callHex);
-
-        assert(callData.hash.eq(hash), 'Call data does not match the existing call hash');
-
-        setCallData({ callData, callError: null });
-      } catch (error) {
-        setCallData({ callData: null, callError: (error as Error).message });
-      }
-    },
-    [api, hash]
-  );
-
   const isAye = type === 'aye';
 
   return (
     <Modal
       className={className}
       header={t<string>('Pending call hashes')}
+      onClose={onClose}
       size='large'
     >
       <Modal.Content>
@@ -217,13 +228,28 @@ function MultisigApprove ({ className = '', onClose, ongoing, threshold, who }: 
               <>
                 {isCallOverride && (
                   <Modal.Columns hint={t('The call data for this transaction matching the hash. Once sent, the multisig will be executed against this.')}>
-                    <Input
-                      autoFocus
-                      help={t('For final approvals, the actual full call data is required to execute the transaction')}
-                      isError={!callData}
-                      label={t('call data for final approval')}
-                      onChange={_setCallData}
-                    />
+                    {callData && callInfo
+                      ? (
+                        <Expander
+                          isPadded
+                          summary={`${callInfo.section}.${callInfo.method}`}
+                          summaryMeta={callInfo.meta}
+                        >
+                          <CallDisplay
+                            className='details'
+                            value={callData}
+                          />
+                        </Expander>
+                      )
+                      : (
+                        <Input
+                          autoFocus
+                          help={t('For final approvals, the actual full call data is required to execute the transaction')}
+                          isError={!callHex || !!callError}
+                          label={t('call data for final approval')}
+                          onChange={setCallHex}
+                        />
+                      )}
                     {callError && (
                       <MarkError content={callError} />
                     )}
@@ -246,7 +272,7 @@ function MultisigApprove ({ className = '', onClose, ongoing, threshold, who }: 
           </>
         )}
       </Modal.Content>
-      <Modal.Actions onCancel={onClose}>
+      <Modal.Actions>
         <TxButton
           accountId={signatory}
           extrinsic={tx}
