@@ -84,6 +84,12 @@ const definitions: OverrideBundleDefinition = {
                 "Erc20": "EvmAddress"
             }
         },
+        "TokenInfo": {
+            "currency_id": "Option<u8>",
+            "name": "Vec<&str>",
+            "symbol": "Vec<&str>",
+            "decimals": "Option<u8>"
+        },
         "CurrencyId": {
             "_enum": {
                 "Token": "TokenSymbol",
