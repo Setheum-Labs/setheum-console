@@ -102,6 +102,7 @@ const definitions: OverrideBundleDefinition = {
             "_enum": [
                 "SETR",
                 "SETUSD",
+<<<<<<< Updated upstream
                 // VVV remove after IAE (Initial Airdrop Offering)
                 // vvv AND MultiCurrency INITIAL ALLOCATIONS vvv
                 "SETM",
@@ -113,6 +114,11 @@ const definitions: OverrideBundleDefinition = {
             "_enum": [
                 "SETR",
                 "SETUSD"
+=======
+                "SETM",
+                "SERP",
+                "DNAR"
+>>>>>>> Stashed changes
             ]
         },
         "AuthoritysOriginId": {
