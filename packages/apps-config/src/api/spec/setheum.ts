@@ -101,6 +101,17 @@ const definitions: OverrideBundleDefinition = {
         "AirDropCurrencyId": {
             "_enum": [
                 "SETR",
+                "SETUSD",
+                // VVV remove after IAE (Initial Airdrop Offering)
+                // vvv AND MultiCurrency INITIAL ALLOCATIONS vvv
+                "SETM",
+                "SERP",
+                "DNAR"
+            ]
+        },
+        "SerpStableCurrencyId": {
+            "_enum": [
+                "SETR",
                 "SETUSD"
             ]
         },
