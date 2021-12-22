@@ -39,6 +39,7 @@
     "clean:electronBuild": "cd packages/apps-electron && polkadot-dev-clean-build",
     "clean:electronRelease": "cd packages/apps-electron && rm -rf release",
     "clean:i18n": "rm -rf packages/apps/public/locales/en && mkdir -p packages/apps/public/locales/en",
+    "deploy": "gh-pages -d packages/apps/build",
     "docs": "echo \"skipping docs\"",
     "lint": "polkadot-dev-run-lint",
     "packElectron": "yarn build:release:electron && yarn clean:electronRelease && electron-builder build -mwl",
@@ -48,12 +49,16 @@
     "packElectron:win": "yarn build:release:electron && electron-builder build --win",
     "postinstall": "polkadot-dev-yarn-only",
     "postinstall:electron": "electron-builder install-app-deps",
+    "predeploy": "yarn run build",
     "start": "yarn clean && cd packages/apps && yarn webpack-cli serve --config webpack.serve.cjs --port 3000",
     "start:electron": "yarn clean:electronBuild && concurrently 'yarn build:devElectronMain && cd packages/apps-electron && electron ./build/electron.js' 'yarn build:devElectronRenderer'",
     "test": "polkadot-dev-run-test --runInBand --testPathIgnorePatterns slow --testNamePattern='^((?!--SLOW--).)*$'",
     "test:all": "polkadot-dev-run-test --runInBand --config ./jest-slow.config.cjs",
     "test:one": "polkadot-dev-run-test",
     "test:skipped": "echo 'tests skipped'"
+  },
+  "dependencies": {
+    "gh-pages": "^3.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
