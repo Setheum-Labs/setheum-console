@@ -69,6 +69,13 @@ const definitions: OverrideBundleDefinition = {
         "AmountOf": "Amount",
         "AuctionId": "u32",
         "AuctionIdOf": "AuctionId",
+        "VestingSchedule": {
+          "start": "BlockNumber",
+          "period": "BlockNumber",
+          "periodCount": "u32",
+          "perPeriod": "Compact<Balance>"
+        },
+        "VestingScheduleOf": "VestingSchedule",
         "TokenSymbol": {
             "_enum": {
                 "SETM": 0,
