@@ -81,8 +81,9 @@ const definitions: OverrideBundleDefinition = {
                 "SETM": 0,
                 "SERP": 1,
                 "DNAR": 2,
-                "SETR": 3,
-                "SETUSD": 4
+                "HELP": 3,
+                "SETR": 4,
+                "SETUSD": 5
             }
         },
         "DexShare": {
@@ -109,11 +110,10 @@ const definitions: OverrideBundleDefinition = {
             "_enum": [
                 "SETR",
                 "SETUSD",
-                // VVV remove after IAE (Initial Airdrop Offering)
-                // vvv AND MultiCurrency INITIAL ALLOCATIONS vvv
                 "SETM",
                 "SERP",
-                "DNAR"
+                "DNAR",
+                "HELP"
             ]
         },
         "SerpStableCurrencyId": {
