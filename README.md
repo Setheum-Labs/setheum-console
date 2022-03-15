@@ -1,5 +1,5 @@
-# @setheum.js/apps
-Setheum Apps UI for interacting with a Setheum/Neom node. This is the main user-facing application, allowing access to all features available on Substrate chains. 
+# @setheum.js/console
+Setheum Console UI for interacting with a Setheum node. This is the main user-facing application, allowing access to all features available on Substrate chains. 
 
 # Based on @polkadot/apps
 [![polkadotjs](https://img.shields.io/badge/polkadot-js-orange?style=flat-square)](https://polkadot.js.org)
