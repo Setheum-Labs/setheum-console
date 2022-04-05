@@ -70,10 +70,10 @@ const definitions: OverrideBundleDefinition = {
         "AuctionId": "u32",
         "AuctionIdOf": "AuctionId",
         "VestingSchedule": {
-          "start": "BlockNumber",
-          "period": "BlockNumber",
-          "periodCount": "u32",
-          "perPeriod": "Compact<Balance>"
+            "start": "BlockNumber",
+            "period": "BlockNumber",
+            "periodCount": "u32",
+            "perPeriod": "Compact<Balance>"
         },
         "VestingScheduleOf": "VestingSchedule",
         "TokenSymbol": {
@@ -106,16 +106,6 @@ const definitions: OverrideBundleDefinition = {
             }
         },
         "CurrencyIdOf": "CurrencyId",
-        "AirDropCurrencyId": {
-            "_enum": [
-                "SETR",
-                "SETUSD",
-                "SETM",
-                "SERP",
-                "DNAR",
-                "HELP"
-            ]
-        },
         "SerpStableCurrencyId": {
             "_enum": [
                 "SETR",
@@ -176,7 +166,6 @@ const definitions: OverrideBundleDefinition = {
             "liquidationPenalty": "Option<Rate>",
             "requiredCollateralRatio": "Option<Rate>"
         },
-        "CandidateInfoOf": "CandidateInfo",
         "TradingPairProvisionParameters": {
             "minContribution": "(Balance, Balance)",
             "targetProvision": "(Balance, Balance)",
@@ -289,12 +278,6 @@ const definitions: OverrideBundleDefinition = {
             ]
         },
         "AtLeast64BitUnsigned": "u128",
-        "SubAccountStatus": {
-            "bonded": "Balance",
-            "available": "Balance",
-            "unbonding": "Vec<(EraIndex,Balance)>",
-            "mockRewardRate": "Rate"
-        },
         "ChangeRate": {
             "_enum": {
                 "NoChange": "Null",
@@ -313,13 +296,48 @@ const definitions: OverrideBundleDefinition = {
         "ExchangeRate": "FixedU128",
         "Rate": "FixedU128",
         "Ratio": "FixedU128",
+        "SwapLimit": {
+            "_enum": {
+                "ExactSupply": "(Balance, Balance)",
+                "ExactTarget": "(Balance, Balance)"
+            }
+        },
         "PublicKey": "[u8; 20]",
         "DestAddress": "Vec<u8>",
         "PoolTokenIndex": "u32",
         "AssetId": "CurrencyId",
-        "Keys": "SessionKeys1"
+        "Keys": "SessionKeys1",
+        "BalanceOf": "Balance",
+        "CampaignInfo": {
+            "origin": "AccountId",
+            "projectName": "Vec<u8>",
+            "projectLogo": "Vec<u8>",
+            "projectDescription": "Vec<u8>",
+            "projectWebsite": "Vec<u8>",
+            "beneficiary": "AccountId",
+            "raiseCurrency": "CurrencyId",
+            "saleToken": "CurrencyId",
+            "crowdAllocation": "Balance",
+            "goal": "Balance",
+            "raised": "Balance",
+            "contributorsCount": "u32",
+            "contributions": "Vec<(AccountId, Balance, Balance, bool)>",
+            "period": "BlockNumber",
+            "campaignStart": "BlockNumber",
+            "campaignEnd": "BlockNumber",
+            "campaignRetirementPeriod": "BlockNumber",
+            "proposalRetirementPeriod": "BlockNumber",
+            "isApproved": "bool",
+            "isRejected": "bool",
+            "isWaiting": "bool",
+            "isActive": "bool",
+            "isSuccessful": "bool",
+            "isFailed": "bool",
+            "isEnded": "bool",
+            "isClaimed": "bool"
+        },
+        "CampaignInfoOf": "CampaignInfo"
       }
-
     }
   ]
 };
