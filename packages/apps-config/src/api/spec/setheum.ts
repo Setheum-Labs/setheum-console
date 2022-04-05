@@ -306,7 +306,37 @@ const definitions: OverrideBundleDefinition = {
         "DestAddress": "Vec<u8>",
         "PoolTokenIndex": "u32",
         "AssetId": "CurrencyId",
-        "Keys": "SessionKeys1"
+        "Keys": "SessionKeys1",
+        "BalanceOf": "Balance",
+        "CampaignInfo": {
+            "origin": "AccountId",
+            "projectName": "Vec<u8>",
+            "projectLogo": "Vec<u8>",
+            "projectDescription": "Vec<u8>",
+            "projectWebsite": "Vec<u8>",
+            "beneficiary": "AccountId",
+            "raiseCurrency": "CurrencyId",
+            "saleToken": "CurrencyId",
+            "crowdAllocation": "Balance",
+            "goal": "Balance",
+            "raised": "Balance",
+            "contributorsCount": "u32",
+            "contributions": "Vec<(AccountId, Balance, Balance, bool)>",
+            "period": "BlockNumber",
+            "campaignStart": "BlockNumber",
+            "campaignEnd": "BlockNumber",
+            "campaignRetirementPeriod": "BlockNumber",
+            "proposalRetirementPeriod": "BlockNumber",
+            "isApproved": "bool",
+            "isRejected": "bool",
+            "isWaiting": "bool",
+            "isActive": "bool",
+            "isSuccessful": "bool",
+            "isFailed": "bool",
+            "isEnded": "bool",
+            "isClaimed": "bool"
+        },
+        "CampaignInfoOf": "CampaignInfo"
       }
     }
   ]
